@@ -11,6 +11,10 @@ Classification databases:
 
 - Used SILVA138/PR2 4.12.0 databases available [here](https://osf.io/z8arq/).
 
+Data cleanup notes:
+
+- S0273, S0362 both have very low sequence counts, and so were discarded. S0362-redo can substitute for S0362, but S0273 did not have a duplicate.
+
 Raw data:
 
 - Sequence Read Archive information available [here](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA659851).
@@ -18,6 +22,6 @@ Raw data:
 
 References:
 
-Biller et al., Marine microbial metagenomes sampled across space and time. Scientific Data 5, 180176 (2018). [paper link](https://www.nature.com/articles/sdata2018176)
+Biller et al., [Marine microbial metagenomes sampled across space and time](https://www.nature.com/articles/sdata2018176). Scientific Data 5, 180176 (2018).
 
-J. McNichol, P. M. Berube, S. J. Biller, J. A. Fuhrman, Evaluating and Improving SSU rRNA PCR Primer Coverage via Metagenomes from Global Ocean Surveys. bioRxiv, 2020.11.09.375543 (2020). [paper link](https://www.biorxiv.org/content/10.1101/2020.11.09.375543v1)
+J. McNichol, P. M. Berube, S. J. Biller, J. A. Fuhrman, [Evaluating and Improving SSU rRNA PCR Primer Coverage via Metagenomes from Global Ocean Surveys](https://www.biorxiv.org/content/10.1101/2020.11.09.375543v1). bioRxiv, 2020.11.09.375543 (2020).
