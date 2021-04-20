@@ -21,7 +21,7 @@ cd 02-PROKs
 #These biom tables are then the input for merging scripts
 ./scripts/P10-generate-tsv-biom-tables-with-taxonomy.sh
 #following step optional, gives you proportional data to play with
-./scripts/P11-transform-tsv-to-proportions.sh
+#./scripts/P11-transform-tsv-to-proportions.sh
 #./scripts/P12a-remake-barplot-with-PhytoRef-taxonomy.sh
 #./scripts/P12-make-subsetted-barplots.sh
 #./scripts/P13-exclude-samples-from-barplots.sh
@@ -29,3 +29,29 @@ cd 02-PROKs
 #./scripts/P15-optional-new-generate-tsv-biom-tables-with-taxonomy.sh
 #./scripts/P16-optional-transform-tsv-to-proportions.sh
 #./scripts/P17-optional-merge-taxonomy.sh
+cd ../02-EUKs
+#./scripts/E00-create-manifest-viz.sh
+#./scripts/E01-import.sh
+#./scripts/E02-visualize-quality_R1-R2.sh
+./scripts/E03-bbduk-cut-reads.sh 220 180
+./scripts/E04-fuse-EUKs-withoutNs.sh
+./scripts/E05-create-manifest-concat.sh
+./scripts/E06-import-concat.sh
+#./scripts/E07-visualize-quality-single-seqs.sh
+#do not need trim length since using concatenated fwd+rev reads
+./scripts/E08-DADA2.sh
+./scripts/E09-export-DADA2-results.sh
+./scripts/E10-classify-seqs.sh
+#see sample-metadata files in this directory
+#./scripts/E11-make-sample-metadata-file.py
+#./scripts/E12-make-barplot.sh
+#./scripts/E13-optionally-cluster-eASVs.sh
+./scripts/E14-split-metazoans-PR2-alternative-class.sh
+./scripts/E15-generate-tsv-biom-tables-with-taxonomy.sh
+#./scripts/E16-transform-tsv-to-proportions.sh
+#./scripts/E17-make-subsetted-barplots.sh
+#./scripts/E18-exclude-samples-from-barplots.sh
+#./scripts/E19-optional-reclassify-multiple-p-confidence.sh
+#./scripts/E20-optional-new-generate-tsv-biom-tables-with-taxonomy.sh
+#./scripts/E21-optional-transform-tsv-to-proportions.sh
+#./scripts/E22-optional-merge-taxonomy.sh
