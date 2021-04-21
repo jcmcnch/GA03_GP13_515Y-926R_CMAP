@@ -16,6 +16,7 @@ Data cleanup notes:
 - S0273, S0362 both have very low sequence counts, and so were discarded. S0362-redo can substitute for S0362, but S0273 did not have a duplicate.
 - S0252 is a strange sample - does not fit with a particular cast, so ignoring.
 - S0336, S0448 are super-deep samples with some evidence of sequence contamination so ignoring.
+- S0361 does not have any chloroplast sequences (deep sample ~1000m)
 
 Raw data:
 
