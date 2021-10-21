@@ -1,5 +1,7 @@
 # Scripts needed to reproduce data processing steps for BioGEOTRACES GA03/GP13 amplicon sequences generated with 515Y/926R primers
 
+NB: Some data parsing using bash CLI tools such as `cut`, most should be standard for a \*nix distribution except for `sponge` which can be installed on Ubuntu-like systems with `sudo apt-get install moreutils`.
+
 General workflow:
 
 1. Denoised 16S and 18S separately according to the steps in `runscripts/00-denoising-workflow.sh`.
