@@ -8,7 +8,7 @@
 
 ## **Workflow overview:**
 
-1. Denoised 16S and 18S separately according to the steps in `runscripts/00-denoising-workflow.sh` and using the raw data found at link below. If you want to reproduce this analysis, place raw reads downloaded from NCBI in the `00-raw/` folder. For easy downloading, I suggest using [this python package](https://github.com/wwood/kingfisher-download).
+1. Denoised 16S and 18S separately according to the steps in `runscripts/00-denoising-workflow.sh` and using the raw data found at link below. If you want to reproduce this analysis, place raw reads downloaded from NCBI in the `00-raw/` folder. For easy downloading, I suggest using [this python package](https://github.com/wwood/kingfisher-download). *To make subsequent annotation easier, Chloroplast sequence taxonomy strings were modified so they begin with "Chloroplast" instead of the less informative "Eukaryota".*.
 2. Using Colette's R script (available [here](https://github.com/fletchec99/normalizing_16S_18S_tags)), merged 16S and 18S ASV tables, using a 5.76x correction factor for 18S. See [this paper](https://www.biorxiv.org/content/10.1101/866731v1.abstract) for information on why a correction is needed. The data associated with this correction is available [on this repository](https://github.com/jcmcnch/18S_sequencing_bias_determination_GA03_GP13).
 3. Split cruises into two separate ASV tables, discarding blanks/mocks/duplicates.
 4. These spreadsheets were then used as input for modelling, statistical analyses, CMAP, etc.
