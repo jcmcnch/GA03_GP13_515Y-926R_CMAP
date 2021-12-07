@@ -35,7 +35,7 @@
 
 Biller et al., [Marine microbial metagenomes sampled across space and time](https://www.nature.com/articles/sdata2018176). Scientific Data 5, 180176 (2018).
 
-J. McNichol, P. M. Berube, S. J. Biller, J. A. Fuhrman, [Evaluating and Improving SSU rRNA PCR Primer Coverage via Metagenomes from Global Ocean Surveys](https://journals.asm.org/doi/10.1128/mSystems.00565-21). mSystems 00565-21 (2021).
+McNichol, Berube, Biller and Fuhrman, [Evaluating and Improving SSU rRNA PCR Primer Coverage via Metagenomes from Global Ocean Surveys](https://journals.asm.org/doi/10.1128/mSystems.00565-21). mSystems 00565-21 (2021).
 
 ## Other notes:
 
