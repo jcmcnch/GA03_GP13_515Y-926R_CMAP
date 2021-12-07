@@ -1,8 +1,8 @@
-#!/bin/bash
-source activate qiime2-2019.4
+#!/bin/bash -i
+conda activate qiime2-2019.4
 
 qiime feature-classifier classify-sklearn \
-  --i-classifier /home/db/SILVA_132/qiime_db/SILVA_132_97_tax_sliced_to_Parada_primers_classifier.qza \
+  --i-classifier /home/db/SILVA_138/210309_SILVA138_nr99_sliced_to_Fuhrman_primers_classifier.qza \
   --i-reads 08-DADA2d/representative_sequences.qza \
   --output-dir 10-classified
 
