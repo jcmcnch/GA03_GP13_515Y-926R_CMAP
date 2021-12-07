@@ -39,4 +39,4 @@ McNichol, Berube, Biller and Fuhrman, [Evaluating and Improving SSU rRNA PCR Pri
 
 ## Other notes:
 
-\* For easy downloading, I suggest using [this python package](https://github.com/wwood/kingfisher-download). 
+\* For easy downloading of sequence data from external repositories, I suggest using [this python package](https://github.com/wwood/kingfisher-download). 
