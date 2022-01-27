@@ -1,7 +1,7 @@
 #!/bin/bash -i
 
 mkdir -p 04-Split
-date=211207
+date=220123
 rm 04-Split/${date}*
 
 #rearrange columns to put taxonomy at beginning
@@ -48,10 +48,10 @@ eASV-pipeline-for-515Y-926R/DADA2-pipeline/02-utility-scripts/remove-bad-columns
   04-Split/${date}_GP13_normalized_sequence_counts_reordered_16S_and_18S.tsv
 
 #proportions GP13, 16S only
-#eASV-pipeline-for-515Y-926R/DADA2-pipeline/02-utility-scripts/remove-bad-columns-and-empty-rows.py \
-#  sample-metadata-backup/samples-to-remove-GP13.tsv \
-#  04-Split/${date}_GA03_GP13_proportions_reordered_16S-only.tsv \
-#  04-Split/${date}_GP13_proportions_reordered_16S-only.tsv
+eASV-pipeline-for-515Y-926R/DADA2-pipeline/02-utility-scripts/remove-bad-columns-and-empty-rows.py \
+  sample-metadata-backup/samples-to-remove-GP13.tsv \
+  04-Split/${date}_GA03_GP13_proportions_reordered_16S-only.tsv \
+  04-Split/${date}_GP13_proportions_reordered_16S-only.tsv
 
 #sequence counts, GA03 output, merged table
 eASV-pipeline-for-515Y-926R/DADA2-pipeline/02-utility-scripts/remove-bad-columns-and-empty-rows.py \
@@ -60,7 +60,7 @@ eASV-pipeline-for-515Y-926R/DADA2-pipeline/02-utility-scripts/remove-bad-columns
   04-Split/${date}_GA03_normalized_sequence_counts_reordered_16S_and_18S.tsv
 
 #proportions, GA03 output, 16S only
-#eASV-pipeline-for-515Y-926R/DADA2-pipeline/02-utility-scripts/remove-bad-columns-and-empty-rows.py \
-#  sample-metadata-backup/samples-to-remove-GA03.tsv \
-#  04-Split/${date}_GA03_GP13_proportions_reordered_16S-only.tsv \
-#  04-Split/${date}_GA03_proportions_reordered_16S-only.tsv
+eASV-pipeline-for-515Y-926R/DADA2-pipeline/02-utility-scripts/remove-bad-columns-and-empty-rows.py \
+  sample-metadata-backup/samples-to-remove-GA03.tsv \
+  04-Split/${date}_GA03_GP13_proportions_reordered_16S-only.tsv \
+  04-Split/${date}_GA03_proportions_reordered_16S-only.tsv
