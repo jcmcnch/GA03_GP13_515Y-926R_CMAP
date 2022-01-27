@@ -1,18 +1,19 @@
 #!/bin/bash -i
 
 mkdir -p 04-Split
-date=220123
-rm 04-Split/${date}*
+mergeDate=`ls 03-Merged/*proportions.tsv | cut -f1 -d_ | cut -f2 -d\/`
+date=`date +"%y%m%d"`
+rm 04-Split/${date}* 2> /dev/null
 
 #rearrange columns to put taxonomy at beginning
-cut -f1,310 03-Merged/${date}_GA03_GP13_normalized_sequence_counts.tsv > 04-Split/tmp1
-cut -f2-309 03-Merged/${date}_GA03_GP13_normalized_sequence_counts.tsv > 04-Split/tmp2
+cut -f1,310 03-Merged/${mergeDate}_GA03_GP13_normalized_sequence_counts.tsv > 04-Split/tmp1
+cut -f2-309 03-Merged/${mergeDate}_GA03_GP13_normalized_sequence_counts.tsv > 04-Split/tmp2
 paste 04-Split/tmp1 04-Split/tmp2 > 04-Split/${date}_GA03_GP13_normalized_sequence_counts_reordered_16S_and_18S.tsv
 rm 04-Split/tmp* 2> /dev/null
 
 #same but for proportions file
-cut -f1,310 03-Merged/${date}_GA03_GP13_proportions.tsv > 04-Split/tmp1
-cut -f2-309 03-Merged/${date}_GA03_GP13_proportions.tsv > 04-Split/tmp2
+cut -f1,310 03-Merged/${mergeDate}_GA03_GP13_proportions.tsv > 04-Split/tmp1
+cut -f2-309 03-Merged/${mergeDate}_GA03_GP13_proportions.tsv > 04-Split/tmp2
 paste 04-Split/tmp1 04-Split/tmp2 > 04-Split/${date}_GA03_GP13_proportions_reordered_16S_and_18S.tsv
 rm 04-Split/tmp* 2> /dev/null
 
@@ -29,6 +30,19 @@ sed -i 's/#OTU ID/OTU_ID/g' 04-Split/${date}_GA03_GP13_sequence_counts_reordered
 sed -i 's/Eukaryota\;/Eukaryota-Chloroplast-16S\;/' 04-Split/${date}_GA03_GP13_sequence_counts_reordered_16S-only.tsv
 
 rm 04-Split/tmp* 2> /dev/null
+
+####
+
+#same but now for 16S only proportions
+cp 02-PROKs/10-exports/all-16S-seqs.with-tax.proportions.tsv 04-Split/${date}_GA03_GP13_proportions_reordered_16S-only.tsv
+
+#fix header
+sed -i 's/#OTU ID/OTU_ID/g' 04-Split/${date}_GA03_GP13_proportions_reordered_16S-only.tsv
+
+#Change Chloroplast taxonomy string to clarify sequences are derived from Eukaryotes but represent 16S rRNA instead of 18S rRNA
+sed -i 's/Eukaryota\;/Eukaryota-Chloroplast-16S\;/' 04-Split/${date}_GA03_GP13_proportions_reordered_16S-only.tsv 
+
+####
 
 #subset spreadsheets with pandas (as wrapped by a python script; use qiime env for pandas library)
 conda activate qiime2-2019.4
